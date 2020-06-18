@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #cccccc88;
+  margin: 0;
+  font-family: cursive;
+}
+.header {
+  background-image: url(icons/bg2.svg);
+  min-height: 80vh;
+  margin-top: -20vh;
+  background-size: cover;
+  background-position: bottom left;
+  color: white;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    .logo {
+      width: 3em;
+      height: 3em;
+      margin: 0 0.5em 0.5em 0;
+    }
+    .brand-name {
+      font-size: 2.5em;
+      font-weight: 500;
+      letter-spacing: 2px;
+      font-family: "Metal Mania", cursive;
+    }
+  }
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    a {
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      padding: 0.6em 1.2em;
+      letter-spacing: 2px;
+      font-family: "Titillium Web", sans-serif;
+      font-size: 1.2em;
+    }
+  }
+}
+//about
+.about {
+  min-height: 70vh;
+  margin-top: -30vh;
+  display: flex;
+  font-family: "Courgette", cursive;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 2em;
+  letter-spacing: 1px;
+  .h1 {
+    margin-bottom: 0.5em;
+    font-size: 2em;
+  }
+  p {
+    margin: 1em;
+    width: 60%;
+    font-size: 1.2em;
+    .name {
+      font-weight: bold;
+      font-size: 1.3em;
+    }
+  }
+}
+.projects,
+.resume {
+  min-height: 80vh;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.project-items {
+  max-width: 250px;
+  max-height: 350px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border-radius: 0.5em;
+  .img {
+    margin: 0.5em auto;
+    height: 200px;
+    width: 200px;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 1em;
+    }
+  }
+  a {
+    font-size: 1.2em;
+  }
+}
+.resume {
+  min-height: 60vh;
+  padding-bottom: 4em;
+  a {
+    color: #226270;
+  }
+  .div h2 {
+    color: #226270;
+    margin: 0.5em;
+  }
+  .div ul li {
+    font-size: 1.1em;
+    margin-top: 0.5em;
+  }
+}
+.contact {
+  height: 50vh;
+  background-image: url(icons/bg1.svg);
+  margin-top: -20vh;
+  padding: 10em;
+  color: #fff;
+  .social {
+    a,
+    span {
+      display: inline-block;
+      padding: 0.5em;
+      background-color: #fff;
+      color: #002c2c;
+      margin: 0.2em;
+    }
+    a {
+      width: 100px;
+      text-decoration: none;
+    }
+    img {
+      margin-right: 0.4em;
+      width: 1em;
+    }
+  }
+}
+.to-top {
+  display: inline-block;
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  bottom: 5%;
+  right: 5%;
+  opacity: 0;
+}
+.scroll {
+  animation: fade 0.5s ease-in-out infinite alternate;
+}
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 80%;
+  }
+  .header {
+    .nav {
+      position: fixed;
+      flex-direction: column;
+      background-color: #002c2c;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      //   clip-path: circle(100px at 90% -20%);
+      transform: scale(0);
+      transform-origin: top right;
+      transition: 0.3s ease-out;
+      z-index: 10;
+    }
+    .burger {
+      margin-right: 5%;
+      cursor: pointer;
+      z-index: 12;
+    }
+    .burger > div {
+      width: 20px;
+      height: 5px;
+      background: white;
+      margin: 3px;
+    }
+    // open-menu classList
+    .open-menu {
+      transform: scale(1);
+    }
+  }
+  .project-items {
+    margin: 0.5em;
+  }
+  .contact {
+    padding: 5em;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
